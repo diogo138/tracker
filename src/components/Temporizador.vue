@@ -21,7 +21,7 @@
     import Cronometro from './Cronometro.vue'
 
     export default defineComponent({
-        name: 'Formulario',
+        name: 'Temporizador',
         components: {
             Cronometro
         },
@@ -42,6 +42,7 @@
             finalizar() {
                 this.cronometroRodando = false
                 clearInterval( this.cronometro )
+                this.$emit('aoTemporizadorFinalizado', this.tempoEmSegundos);
             }
         }
     });
